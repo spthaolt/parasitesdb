@@ -1,0 +1,145 @@
+object DatabaseForm: TDatabaseForm
+  Left = 326
+  Height = 460
+  Top = 159
+  Width = 767
+  BorderStyle = bsDialog
+  Caption = 'DatabaseForm'
+  ClientHeight = 460
+  ClientWidth = 767
+  LCLVersion = '1.2.6.0'
+  object DBGrid1: TDBGrid
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = EditSearch
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = DBNavigator1
+    Left = 5
+    Height = 389
+    Top = 36
+    Width = 241
+    Anchors = [akTop, akLeft, akBottom]
+    AutoFillColumns = True
+    BorderSpacing.Around = 5
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'name'
+        Width = 225
+        FieldName = 'name'
+      end>
+    DataSource = DataSource1
+    Scrollbars = ssAutoVertical
+    TabOrder = 0
+  end
+  object DBNavigator1: TDBNavigator
+    AnchorSideLeft.Control = Owner
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 5
+    Height = 25
+    Top = 430
+    Width = 241
+    Anchors = [akLeft, akBottom]
+    BevelOuter = bvNone
+    BorderSpacing.Around = 5
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = DataSource1
+    Options = []
+    TabOrder = 1
+  end
+  object DBMemo1: TDBMemo
+    AnchorSideLeft.Control = DBGrid1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Label2
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Label1
+    Left = 251
+    Height = 190
+    Top = 28
+    Width = 511
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Around = 5
+    DataField = 'description'
+    DataSource = DataSource1
+    Font.CharSet = 4
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Quality = fqCleartypeNatural
+    ParentFont = False
+    TabOrder = 2
+  end
+  object DBMemo2: TDBMemo
+    AnchorSideLeft.Control = DBGrid1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Label1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 251
+    Height = 212
+    Top = 243
+    Width = 511
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Around = 5
+    DataField = 'recommendation'
+    DataSource = DataSource1
+    Font.CharSet = 4
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Pitch = fpVariable
+    Font.Quality = fqCleartypeNatural
+    ParentFont = False
+    TabOrder = 3
+  end
+  object Label1: TLabel
+    AnchorSideLeft.Control = DBGrid1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    AnchorSideTop.Side = asrCenter
+    Left = 251
+    Height = 15
+    Top = 223
+    Width = 98
+    BorderSpacing.Left = 5
+    Caption = 'Recommendation:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    AnchorSideLeft.Control = EditSearch
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = EditSearch
+    Left = 251
+    Height = 15
+    Top = 8
+    Width = 63
+    BorderSpacing.Left = 5
+    Caption = 'Description:'
+    ParentColor = False
+  end
+  object EditSearch: TEdit
+    Left = 5
+    Height = 23
+    Top = 8
+    Width = 241
+    OnChange = EditSearchChange
+    OnClick = EditSearchClick
+    TabOrder = 4
+    Text = 'Type here to search'
+  end
+  object DataSource1: TDataSource
+    DataSet = MainForm.Sqlite3Dataset1
+    left = 148
+    top = 97
+  end
+end

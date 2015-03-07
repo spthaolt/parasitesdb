@@ -1,0 +1,130 @@
+object MainForm: TMainForm
+  Left = 438
+  Height = 463
+  Top = 267
+  Width = 605
+  BorderStyle = bsDialog
+  Caption = 'MainForm'
+  ClientHeight = 463
+  ClientWidth = 605
+  OnCreate = FormCreate
+  LCLVersion = '1.2.6.0'
+  object Memo1: TMemo
+    AnchorSideRight.Control = BtnNext
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 8
+    Height = 451
+    Top = 7
+    Width = 416
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Around = 5
+    Lines.Strings = (
+      'Memo1'
+    )
+    TabOrder = 0
+  end
+  object BtnNext: TBitBtn
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = BtnDbMgr
+    Left = 429
+    Height = 38
+    Top = 304
+    Width = 171
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Left = 5
+    BorderSpacing.Top = 5
+    BorderSpacing.Right = 5
+    BorderSpacing.Bottom = 20
+    Caption = 'Next'
+    TabOrder = 1
+  end
+  object BtnExit: TBitBtn
+    AnchorSideLeft.Control = Memo1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 429
+    Height = 38
+    Top = 420
+    Width = 171
+    Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Around = 5
+    Caption = 'Exit'
+    OnClick = BtnExitClick
+    TabOrder = 2
+  end
+  object BtnDbMgr: TBitBtn
+    AnchorSideLeft.Control = BtnNext
+    AnchorSideRight.Control = BtnNext
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = BtnExit
+    Left = 429
+    Height = 38
+    Top = 362
+    Width = 171
+    Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Bottom = 20
+    Caption = 'Database'
+    OnClick = BtnDbMgrClick
+    TabOrder = 3
+  end
+  object Image1: TImage
+    AnchorSideLeft.Control = Memo1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = BtnNext
+    Left = 429
+    Height = 279
+    Top = 5
+    Width = 171
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Top = 5
+    BorderSpacing.Right = 5
+    BorderSpacing.Bottom = 20
+  end
+  object Sqlite3Dataset1: TSqlite3Dataset
+    IndexFieldNames = 'id'
+    FileName = 'parasites.db'
+    PrimaryKey = 'id'
+    SaveOnClose = True
+    SaveOnRefetch = True
+    StoreDefs = True
+    TableName = 'parasites'
+    FieldDefs = <    
+      item
+        Name = 'id'
+        Attributes = [faHiddenCol, faReadonly, faFixed]
+        DataType = ftAutoInc
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'name'
+        DataType = ftString
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'description'
+        DataType = ftMemo
+        Precision = 0
+        Size = 0
+      end    
+      item
+        Name = 'recommendation'
+        DataType = ftMemo
+        Precision = 0
+        Size = 0
+      end>
+    left = 80
+    top = 200
+  end
+end
