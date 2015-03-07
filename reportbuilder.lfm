@@ -1,0 +1,31 @@
+object ReportBuilderForm: TReportBuilderForm
+  Left = 326
+  Height = 501
+  Top = 156
+  Width = 630
+  Caption = 'ReportBuilderForm'
+  ClientHeight = 501
+  ClientWidth = 630
+  LCLVersion = '1.2.6.0'
+  object GroupBox1: TGroupBox
+    Left = 68
+    Height = 105
+    Top = 87
+    Width = 185
+    Caption = 'GroupBox1'
+    TabOrder = 0
+  end
+  object frReport1: TfrReport
+    Dataset = frDBDataSet1
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbLoad, pbSave, pbPrint, pbFind, pbHelp, pbExit]
+    DataType = dtDataSet
+    left = 480
+    top = 272
+  end
+  object frDBDataSet1: TfrDBDataSet
+    left = 472
+    top = 176
+  end
+end

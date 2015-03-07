@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 438
+  Left = 437
   Height = 463
-  Top = 267
+  Top = 243
   Width = 605
   BorderStyle = bsDialog
   Caption = 'MainForm'
@@ -19,9 +19,7 @@ object MainForm: TMainForm
     Width = 416
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Around = 5
-    Lines.Strings = (
-      'Memo1'
-    )
+    ScrollBars = ssAutoBoth
     TabOrder = 0
   end
   object BtnNext: TBitBtn
@@ -91,7 +89,7 @@ object MainForm: TMainForm
     BorderSpacing.Bottom = 20
   end
   object Sqlite3Dataset1: TSqlite3Dataset
-    IndexFieldNames = 'id'
+    IndexFieldNames = 'name'
     FileName = 'parasites.db'
     PrimaryKey = 'id'
     SaveOnClose = True
@@ -127,4 +125,4 @@ object MainForm: TMainForm
     left = 80
     top = 200
   end
-end
+end

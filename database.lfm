@@ -1,12 +1,13 @@
 object DatabaseForm: TDatabaseForm
-  Left = 326
+  Left = 325
   Height = 460
-  Top = 159
+  Top = 135
   Width = 767
   BorderStyle = bsDialog
   Caption = 'DatabaseForm'
   ClientHeight = 460
   ClientWidth = 767
+  OnCreate = FormCreate
   LCLVersion = '1.2.6.0'
   object DBGrid1: TDBGrid
     AnchorSideLeft.Control = Owner
@@ -14,8 +15,8 @@ object DatabaseForm: TDatabaseForm
     AnchorSideTop.Side = asrBottom
     AnchorSideBottom.Control = DBNavigator1
     Left = 5
-    Height = 389
-    Top = 36
+    Height = 387
+    Top = 38
     Width = 241
     Anchors = [akTop, akLeft, akBottom]
     AutoFillColumns = True
@@ -24,7 +25,7 @@ object DatabaseForm: TDatabaseForm
     Columns = <    
       item
         Title.Caption = 'name'
-        Width = 225
+        Width = 227
         FieldName = 'name'
       end>
     DataSource = DataSource1
@@ -110,7 +111,7 @@ object DatabaseForm: TDatabaseForm
     Left = 251
     Height = 15
     Top = 223
-    Width = 98
+    Width = 109
     BorderSpacing.Left = 5
     Caption = 'Recommendation:'
     ParentColor = False
@@ -122,14 +123,14 @@ object DatabaseForm: TDatabaseForm
     Left = 251
     Height = 15
     Top = 8
-    Width = 63
+    Width = 72
     BorderSpacing.Left = 5
     Caption = 'Description:'
     ParentColor = False
   end
   object EditSearch: TEdit
     Left = 5
-    Height = 23
+    Height = 25
     Top = 8
     Width = 241
     OnChange = EditSearchChange
@@ -142,4 +143,4 @@ object DatabaseForm: TDatabaseForm
     left = 148
     top = 97
   end
-end
+end

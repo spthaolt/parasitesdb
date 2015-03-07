@@ -23,6 +23,7 @@ type
     Label2: TLabel;
     procedure EditSearchChange(Sender: TObject);
     procedure EditSearchClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { private declarations }
   public
@@ -58,5 +59,10 @@ begin
 
 end;
 
-end.
+procedure TDatabaseForm.FormCreate(Sender: TObject);
+begin
 
+end;
+
+end.
+
