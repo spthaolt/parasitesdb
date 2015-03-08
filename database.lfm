@@ -1,10 +1,10 @@
 object DatabaseForm: TDatabaseForm
-  Left = 325
+  Left = 477
   Height = 460
-  Top = 135
+  Top = 412
   Width = 767
   BorderStyle = bsDialog
-  Caption = 'DatabaseForm'
+  Caption = 'Database Manager'
   ClientHeight = 460
   ClientWidth = 767
   OnCreate = FormCreate
@@ -15,8 +15,8 @@ object DatabaseForm: TDatabaseForm
     AnchorSideTop.Side = asrBottom
     AnchorSideBottom.Control = DBNavigator1
     Left = 5
-    Height = 387
-    Top = 38
+    Height = 389
+    Top = 36
     Width = 241
     Anchors = [akTop, akLeft, akBottom]
     AutoFillColumns = True
@@ -25,7 +25,7 @@ object DatabaseForm: TDatabaseForm
     Columns = <    
       item
         Title.Caption = 'name'
-        Width = 227
+        Width = 225
         FieldName = 'name'
       end>
     DataSource = DataSource1
@@ -76,6 +76,7 @@ object DatabaseForm: TDatabaseForm
     Font.Name = 'Tahoma'
     Font.Quality = fqCleartypeNatural
     ParentFont = False
+    ScrollBars = ssAutoVertical
     TabOrder = 2
   end
   object DBMemo2: TDBMemo
@@ -101,6 +102,7 @@ object DatabaseForm: TDatabaseForm
     Font.Pitch = fpVariable
     Font.Quality = fqCleartypeNatural
     ParentFont = False
+    ScrollBars = ssAutoVertical
     TabOrder = 3
   end
   object Label1: TLabel
@@ -111,7 +113,7 @@ object DatabaseForm: TDatabaseForm
     Left = 251
     Height = 15
     Top = 223
-    Width = 109
+    Width = 98
     BorderSpacing.Left = 5
     Caption = 'Recommendation:'
     ParentColor = False
@@ -123,14 +125,14 @@ object DatabaseForm: TDatabaseForm
     Left = 251
     Height = 15
     Top = 8
-    Width = 72
+    Width = 63
     BorderSpacing.Left = 5
     Caption = 'Description:'
     ParentColor = False
   end
   object EditSearch: TEdit
     Left = 5
-    Height = 25
+    Height = 23
     Top = 8
     Width = 241
     OnChange = EditSearchChange
@@ -143,4 +145,4 @@ object DatabaseForm: TDatabaseForm
     left = 148
     top = 97
   end
-end
+end

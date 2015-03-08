@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Sqlite3DS, FileUtil, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, Buttons, ExtCtrls, Database;
+  StdCtrls, Buttons, ExtCtrls, Database, ReportBuilder;
 
 type
 
@@ -21,6 +21,7 @@ type
     Sqlite3Dataset1: TSqlite3Dataset;
     procedure BtnDbMgrClick(Sender: TObject);
     procedure BtnExitClick(Sender: TObject);
+    procedure BtnNextClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     { private declarations }
@@ -49,10 +50,15 @@ begin
   MainForm.Close;
 end;
 
+procedure TMainForm.BtnNextClick(Sender: TObject);
+begin
+  ReportBuilderForm.ShowModal;
+end;
+
 procedure TMainForm.BtnDbMgrClick(Sender: TObject);
 begin
   DatabaseForm.ShowModal;
 end;
 
 end.
-
+

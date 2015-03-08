@@ -1,19 +1,342 @@
 object ReportBuilderForm: TReportBuilderForm
-  Left = 326
-  Height = 501
-  Top = 156
-  Width = 630
-  Caption = 'ReportBuilderForm'
-  ClientHeight = 501
-  ClientWidth = 630
+  Left = 279
+  Height = 482
+  Top = 127
+  Width = 860
+  BorderStyle = bsDialog
+  Caption = 'Report Builder'
+  ClientHeight = 482
+  ClientWidth = 860
+  OnCreate = FormCreate
+  OnShow = FormShow
   LCLVersion = '1.2.6.0'
-  object GroupBox1: TGroupBox
-    Left = 68
-    Height = 105
-    Top = 87
-    Width = 185
-    Caption = 'GroupBox1'
+  object GroupCustomerInfo: TGroupBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = GroupDiagnoses
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 5
+    Height = 136
+    Top = 341
+    Width = 459
+    Anchors = [akTop, akLeft, akBottom]
+    BorderSpacing.Around = 5
+    Caption = 'Customer Information'
+    ClientHeight = 118
+    ClientWidth = 455
     TabOrder = 0
+    object Label3: TLabel
+      AnchorSideLeft.Control = GroupCustomerInfo
+      AnchorSideTop.Control = GroupCustomerInfo
+      Left = 5
+      Height = 15
+      Top = 5
+      Width = 52
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
+      Caption = 'Full name'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      AnchorSideTop.Control = GroupCustomerInfo
+      Left = 308
+      Height = 15
+      Top = 5
+      Width = 65
+      Anchors = [akTop]
+      BorderSpacing.Top = 5
+      Caption = 'Year of birth'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      AnchorSideLeft.Control = GroupCustomerInfo
+      AnchorSideTop.Side = asrBottom
+      Left = 5
+      Height = 15
+      Top = 32
+      Width = 72
+      BorderSpacing.Around = 5
+      Caption = 'Address Lines'
+      ParentColor = False
+    end
+    object EditFullname: TDBEdit
+      AnchorSideLeft.Control = Label3
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = GroupCustomerInfo
+      AnchorSideRight.Control = Label4
+      Left = 62
+      Height = 23
+      Top = 2
+      Width = 241
+      DataField = 'fullname'
+      DataSource = ReportDS
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 2
+      BorderSpacing.Right = 5
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object EditYOB: TDBEdit
+      AnchorSideLeft.Control = Label4
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = GroupCustomerInfo
+      AnchorSideRight.Control = GroupCustomerInfo
+      AnchorSideRight.Side = asrBottom
+      Left = 378
+      Height = 23
+      Top = 2
+      Width = 72
+      DataField = 'yob'
+      DataSource = ReportDS
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 2
+      BorderSpacing.Right = 5
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 1
+    end
+    object MemoAddress: TDBMemo
+      AnchorSideLeft.Control = GroupCustomerInfo
+      AnchorSideTop.Control = Label5
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = GroupCustomerInfo
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = GroupCustomerInfo
+      AnchorSideBottom.Side = asrBottom
+      Left = 5
+      Height = 61
+      Top = 52
+      Width = 445
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      BorderSpacing.Around = 5
+      DataField = 'address'
+      DataSource = ReportDS
+      TabOrder = 2
+    end
+  end
+  object GroupDiagnoses: TGroupBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    Left = 5
+    Height = 331
+    Top = 5
+    Width = 675
+    BorderSpacing.Around = 5
+    Caption = 'Diagnoses'
+    ClientHeight = 313
+    ClientWidth = 671
+    TabOrder = 1
+    object DBGrid1: TDBGrid
+      AnchorSideLeft.Control = GroupDiagnoses
+      AnchorSideTop.Control = GroupDiagnoses
+      AnchorSideRight.Control = GroupDiagnoses
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = GroupDiagnoses
+      AnchorSideBottom.Side = asrBottom
+      Left = 0
+      Height = 273
+      Top = 0
+      Width = 360
+      AutoFillColumns = True
+      BorderStyle = bsNone
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'diagnose'
+          Width = 165
+          FieldName = 'diagnose'
+        end      
+        item
+          Title.Caption = 'extra'
+          Width = 166
+          FieldName = 'extra'
+        end>
+      DataSource = RpDetailDS
+      Flat = True
+      Scrollbars = ssAutoBoth
+      TabOrder = 0
+    end
+    object Label1: TLabel
+      AnchorSideLeft.Control = DBGrid1
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = GroupDiagnoses
+      Left = 365
+      Height = 15
+      Top = 5
+      Width = 60
+      BorderSpacing.Around = 5
+      Caption = 'Description'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      AnchorSideLeft.Control = DBGrid1
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = MemoDescription
+      AnchorSideTop.Side = asrBottom
+      Left = 365
+      Height = 15
+      Top = 157
+      Width = 95
+      BorderSpacing.Around = 5
+      Caption = 'Recommendation'
+      ParentColor = False
+    end
+    object MemoDescription: TDBMemo
+      AnchorSideLeft.Control = DBGrid1
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label1
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = GroupDiagnoses
+      AnchorSideRight.Side = asrBottom
+      Left = 365
+      Height = 127
+      Top = 25
+      Width = 301
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Around = 5
+      DataField = 'description'
+      DataSource = RpDetailDS
+      TabOrder = 1
+    end
+    object MemoRecommendation: TDBMemo
+      AnchorSideLeft.Control = DBGrid1
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label2
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = GroupDiagnoses
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = GroupDiagnoses
+      AnchorSideBottom.Side = asrBottom
+      Left = 365
+      Height = 131
+      Top = 177
+      Width = 301
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      BorderSpacing.Around = 5
+      DataField = 'recommendation'
+      DataSource = RpDetailDS
+      TabOrder = 2
+    end
+    object DBNavigator1: TDBNavigator
+      AnchorSideLeft.Control = DBGrid1
+      AnchorSideTop.Control = DBGrid1
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = DBGrid1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = GroupDiagnoses
+      AnchorSideBottom.Side = asrBottom
+      Left = 0
+      Height = 30
+      Top = 278
+      Width = 360
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      BevelOuter = bvNone
+      BorderSpacing.Top = 5
+      BorderSpacing.Bottom = 5
+      ChildSizing.EnlargeHorizontal = crsScaleChilds
+      ChildSizing.EnlargeVertical = crsScaleChilds
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 100
+      ClientHeight = 30
+      ClientWidth = 360
+      DataSource = RpDetailDS
+      Options = []
+      TabOrder = 3
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbEdit, nbPost, nbCancel]
+    end
+  end
+  object BtnPreview: TBitBtn
+    AnchorSideLeft.Control = GroupDiagnoses
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 685
+    Height = 30
+    Top = 5
+    Width = 170
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Around = 5
+    Caption = 'Show Report'
+    OnClick = BtnPreviewClick
+    TabOrder = 2
+  end
+  object GroupRecommendation: TGroupBox
+    AnchorSideLeft.Control = GroupCustomerInfo
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = GroupDiagnoses
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 469
+    Height = 136
+    Top = 341
+    Width = 386
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Left = 5
+    BorderSpacing.Top = 5
+    BorderSpacing.Right = 5
+    BorderSpacing.Bottom = 5
+    Caption = 'Report recommendations'
+    ClientHeight = 118
+    ClientWidth = 382
+    TabOrder = 3
+    object MemoReportRecommend: TDBMemo
+      AnchorSideLeft.Control = GroupRecommendation
+      AnchorSideTop.Control = GroupRecommendation
+      AnchorSideRight.Control = GroupRecommendation
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = GroupRecommendation
+      AnchorSideBottom.Side = asrBottom
+      Left = 0
+      Height = 118
+      Top = 0
+      Width = 382
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      DataField = 'recommendation'
+      DataSource = ReportDS
+      TabOrder = 0
+    end
+  end
+  object BtnClose: TBitBtn
+    AnchorSideLeft.Control = GroupDiagnoses
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = GroupRecommendation
+    Left = 685
+    Height = 32
+    Top = 304
+    Width = 175
+    Anchors = [akLeft, akRight, akBottom]
+    Caption = 'Close'
+    OnClick = BtnCloseClick
+    TabOrder = 4
+  end
+  object BtnPrint: TBitBtn
+    AnchorSideLeft.Control = GroupDiagnoses
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = BtnPreview
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 685
+    Height = 30
+    Top = 40
+    Width = 170
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Right = 5
+    Caption = 'Print...'
+    OnClick = BtnPrintClick
+    TabOrder = 5
   end
   object frReport1: TfrReport
     Dataset = frDBDataSet1
@@ -21,11 +344,121 @@ object ReportBuilderForm: TReportBuilderForm
     Options = []
     PreviewButtons = [pbZoom, pbLoad, pbSave, pbPrint, pbFind, pbHelp, pbExit]
     DataType = dtDataSet
-    left = 480
-    top = 272
+    left = 808
+    top = 225
   end
   object frDBDataSet1: TfrDBDataSet
-    left = 472
-    top = 176
+    DataSet = RpDetailSQLite
+    DataSource = RpDetailDS
+    left = 720
+    top = 225
+  end
+  object RpDetailSQLite: TSqlite3Dataset
+    IndexFieldNames = 'report_id'
+    FileName = 'parasites.db'
+    PrimaryKey = 'id'
+    SaveOnClose = True
+    SaveOnRefetch = True
+    SQL = 'SELECT id,report_id,diagnose,extra,description,recommendation FROM report_detail'
+    StoreDefs = True
+    TableName = 'report_detail'
+    MasterSource = ReportDS
+    MasterFields = 'report_id'
+    Active = True
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'report_id'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'diagnose'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'extra'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'description'
+        DataType = ftMemo
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'recommendation'
+        DataType = ftMemo
+        Precision = -1
+        Size = 0
+      end>
+    left = 768
+    top = 160
+  end
+  object ReportDS: TDataSource
+    DataSet = ReportSQLite
+    left = 768
+    top = 88
+  end
+  object RpDetailDS: TDataSource
+    DataSet = RpDetailSQLite
+    left = 704
+    top = 160
+  end
+  object ReportSQLite: TSqlite3Dataset
+    FileName = 'parasites.db'
+    PrimaryKey = 'report_id'
+    SaveOnClose = True
+    SaveOnRefetch = True
+    SQL = 'Select * from reports;'
+    StoreDefs = True
+    TableName = 'reports'
+    FieldDefs = <    
+      item
+        Name = 'report_id'
+        DataType = ftAutoInc
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'fullname'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'yob'
+        DataType = ftInteger
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'address'
+        DataType = ftMemo
+        Precision = -1
+        Size = 0
+      end    
+      item
+        Name = 'recommendation'
+        DataType = ftMemo
+        Precision = -1
+        Size = 0
+      end>
+    left = 820
+    top = 128
+  end
+  object PrintDialog1: TPrintDialog
+    left = 705
+    top = 123
   end
 end
