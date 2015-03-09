@@ -7,7 +7,7 @@
     <KeyWords Value=""/>
     <Comments Value=""/>
     <ReportCreateDate Value="1899-12-30 00:00:00"/>
-    <ReportLastChange Value="2015-03-09 01:34:20"/>
+    <ReportLastChange Value="2015-03-09 14:52:47"/>
     <ReportVersionBuild Value=""/>
     <ReportVersionMajor Value=""/>
     <ReportVersionMinor Value=""/>
@@ -17,7 +17,7 @@
     <Pages>
       <PrintToDefault Value="False"/>
       <DoublePass Value="False"/>
-      <SelectedPrinter Value="HP Deskjet Ink Adv 2010 K010"/>
+      <SelectedPrinter Value="Microsoft XPS Document Writer"/>
       <PageCount Value="1"/>
       <Page1>
         <Name Value="Page1"/>
@@ -720,7 +720,7 @@
             <FrameColor Value="clBlack"/>
             <FrameStyle Value="frsSolid"/>
             <FrameWidth Value="1"/>
-            <FrameBorders Value=""/>
+            <FrameBorders Value="frbLeft,frbTop,frbRight,frbBottom"/>
           </Frames>
           <Data>
             <Format Value="558"/>

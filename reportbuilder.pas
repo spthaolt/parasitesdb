@@ -14,6 +14,7 @@ type
   { TReportBuilderForm }
 
   TReportBuilderForm = class(TForm)
+    BtnDatabase: TBitBtn;
     BtnPrint: TBitBtn;
     BtnPreview: TBitBtn;
     BtnClose: TBitBtn;
@@ -42,6 +43,7 @@ type
     ReportSQLite: TSqlite3Dataset;
     Sqlite3Query: TSqlite3Dataset;
     procedure BtnCloseClick(Sender: TObject);
+    procedure BtnDatabaseClick(Sender: TObject);
     procedure BtnPreviewClick(Sender: TObject);
     procedure BtnPrintClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -57,7 +59,7 @@ var
 
 implementation
 
-uses Main;
+uses Main,Database;
 
 {$R *.lfm}
 
@@ -66,6 +68,11 @@ uses Main;
 procedure TReportBuilderForm.BtnCloseClick(Sender: TObject);
 begin
   ReportBuilderForm.Close;
+end;
+
+procedure TReportBuilderForm.BtnDatabaseClick(Sender: TObject);
+begin
+  DatabaseForm.ShowModal;
 end;
 
 procedure TReportBuilderForm.BtnPreviewClick(Sender: TObject);
@@ -124,6 +131,7 @@ begin
     ReportSQLite.CreateTable;
   if not RpDetailSQLite.TableExists then
     RpDetailSQLite.CreateTable;
+  Sqlite3Query.Active:=true;
 end;
 
 procedure TReportBuilderForm.FormShow(Sender: TObject);
@@ -134,6 +142,7 @@ var diagnoses: TStringList;
   regexObj: TRegExpr;
   extra:string;
   datepart:string;
+  sql:string;
 
 begin
   ReportSQLite.Active:=true;
@@ -154,27 +163,31 @@ begin
     parts:= TStringList.Create;
     parts.Delimiter:= chr(32);
     parts.DelimitedText:=line;
-    regexObj.Expression := '\d_';
-    extra:=parts[parts.Count-1];
-    datepart:=parts[0];
-    parts.Delete(parts.Count-1);
-    parts.Delete(0);
-    parts.Delimiter:='%';
-    Sqlite3Query.SQL:='select * from parasites where `name` like "%'+regexObj.Replace(parts.DelimitedText, '',false)+'%"';
-    parts.Delimiter:=' ';
-    regexObj.Expression := '\d_';
-    Sqlite3Query.Active:=true;
-
-    RpDetailSQLite.Append;
-    RpDetailSQLite.FieldByName('diagnose').AsString:=regexObj.Replace(parts.DelimitedText, '',false);
-    RpDetailSQLite.FieldByName('extra').AsString:=extra;
-    if not Sqlite3Query.RecordCount = 0 then
+    if parts.Count >= 3 then
     begin
-      Sqlite3Query.First;
-      RpDetailSQLite.FieldByName('description').AsString:=Sqlite3Query.FieldByName('description').AsString;
+      regexObj.Expression := '\d_';
+      extra:=parts[parts.Count-1];
+      datepart:=parts[0];
+      parts.Delete(parts.Count-1);
+      parts.Delete(0);
+      parts.Delimiter:='%';
+      sql:='select * from parasites p where p.name like "%'+regexObj.Replace(parts.DelimitedText, '',false)+'%" COLLATE NOCASE';
+      parts.Delimiter:=' ';
+      regexObj.Expression := '\d_';
+      Sqlite3Query.Close;
+      Sqlite3Query.SQL:=sql;
+      Sqlite3Query.Open;
+
+      RpDetailSQLite.Append;
+      RpDetailSQLite.FieldByName('diagnose').AsString:=regexObj.Replace(parts.DelimitedText, '',false);
+      RpDetailSQLite.FieldByName('extra').AsString:=extra;
+      if not Sqlite3Query.EOF then
+      begin
+        RpDetailSQLite.FieldByName('description').AsString:=Sqlite3Query.FieldByName('description').AsString;
+      end;
+      RpDetailSQLite.Post;
     end;
-    RpDetailSQLite.Post;
-    Sqlite3Query.Active:=False;
+
   end;
 
 end;
