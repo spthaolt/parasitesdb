@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, memds, Sqlite3DS, db, FileUtil, PrintersDlgs, LR_Class,
   LR_DBSet, LR_View, Forms, Controls, Graphics, Dialogs, StdCtrls, DBGrids,
-  Buttons, DbCtrls, Printers;
+  Buttons, DbCtrls, Printers, Regexpr;
 
 type
 
@@ -40,6 +40,7 @@ type
     MemoReportRecommend: TDBMemo;
     RpDetailSQLite: TSqlite3Dataset;
     ReportSQLite: TSqlite3Dataset;
+    Sqlite3Query: TSqlite3Dataset;
     procedure BtnCloseClick(Sender: TObject);
     procedure BtnPreviewClick(Sender: TObject);
     procedure BtnPrintClick(Sender: TObject);
@@ -55,6 +56,8 @@ var
   ReportBuilderForm: TReportBuilderForm;
 
 implementation
+
+uses Main;
 
 {$R *.lfm}
 
@@ -124,6 +127,14 @@ begin
 end;
 
 procedure TReportBuilderForm.FormShow(Sender: TObject);
+var diagnoses: TStringList;
+  i: integer;
+  line: string;
+  parts: TStrings;
+  regexObj: TRegExpr;
+  extra:string;
+  datepart:string;
+
 begin
   ReportSQLite.Active:=true;
   ReportSQLite.Append;
@@ -133,7 +144,39 @@ begin
   ReportSQLite.Last;
   RpDetailSQLite.Active:=true;
 
-  //
+  // parse input
+  for i:=0 to MainForm.Memo1.Lines.Count-1 do
+  begin
+    line := MainForm.Memo1.Lines[i];
+    regexObj := TRegExpr.Create;
+    regexObj.Expression := '\ +';
+    line := regexObj.Replace(line, chr(32),false);
+    parts:= TStringList.Create;
+    parts.Delimiter:= chr(32);
+    parts.DelimitedText:=line;
+    regexObj.Expression := '\d_';
+    extra:=parts[parts.Count-1];
+    datepart:=parts[0];
+    parts.Delete(parts.Count-1);
+    parts.Delete(0);
+    parts.Delimiter:='%';
+    Sqlite3Query.SQL:='select * from parasites where `name` like "%'+regexObj.Replace(parts.DelimitedText, '',false)+'%"';
+    parts.Delimiter:=' ';
+    regexObj.Expression := '\d_';
+    Sqlite3Query.Active:=true;
+
+    RpDetailSQLite.Append;
+    RpDetailSQLite.FieldByName('diagnose').AsString:=regexObj.Replace(parts.DelimitedText, '',false);
+    RpDetailSQLite.FieldByName('extra').AsString:=extra;
+    if not Sqlite3Query.RecordCount = 0 then
+    begin
+      Sqlite3Query.First;
+      RpDetailSQLite.FieldByName('description').AsString:=Sqlite3Query.FieldByName('description').AsString;
+    end;
+    RpDetailSQLite.Post;
+    Sqlite3Query.Active:=False;
+  end;
+
 end;
 
 end.

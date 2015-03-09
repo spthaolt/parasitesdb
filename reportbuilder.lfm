@@ -1,7 +1,7 @@
 object ReportBuilderForm: TReportBuilderForm
-  Left = 279
+  Left = 278
   Height = 482
-  Top = 127
+  Top = 103
   Width = 860
   BorderStyle = bsDialog
   Caption = 'Report Builder'
@@ -23,8 +23,8 @@ object ReportBuilderForm: TReportBuilderForm
     Anchors = [akTop, akLeft, akBottom]
     BorderSpacing.Around = 5
     Caption = 'Customer Information'
-    ClientHeight = 118
-    ClientWidth = 455
+    ClientHeight = 120
+    ClientWidth = 457
     TabOrder = 0
     object Label3: TLabel
       AnchorSideLeft.Control = GroupCustomerInfo
@@ -32,7 +32,7 @@ object ReportBuilderForm: TReportBuilderForm
       Left = 5
       Height = 15
       Top = 5
-      Width = 52
+      Width = 58
       BorderSpacing.Left = 5
       BorderSpacing.Top = 5
       Caption = 'Full name'
@@ -40,10 +40,10 @@ object ReportBuilderForm: TReportBuilderForm
     end
     object Label4: TLabel
       AnchorSideTop.Control = GroupCustomerInfo
-      Left = 308
+      Left = 305
       Height = 15
       Top = 5
-      Width = 65
+      Width = 72
       Anchors = [akTop]
       BorderSpacing.Top = 5
       Caption = 'Year of birth'
@@ -55,7 +55,7 @@ object ReportBuilderForm: TReportBuilderForm
       Left = 5
       Height = 15
       Top = 32
-      Width = 72
+      Width = 83
       BorderSpacing.Around = 5
       Caption = 'Address Lines'
       ParentColor = False
@@ -65,10 +65,10 @@ object ReportBuilderForm: TReportBuilderForm
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = GroupCustomerInfo
       AnchorSideRight.Control = Label4
-      Left = 62
-      Height = 23
+      Left = 68
+      Height = 25
       Top = 2
-      Width = 241
+      Width = 232
       DataField = 'fullname'
       DataSource = ReportDS
       Anchors = [akTop, akLeft, akRight]
@@ -85,10 +85,10 @@ object ReportBuilderForm: TReportBuilderForm
       AnchorSideTop.Control = GroupCustomerInfo
       AnchorSideRight.Control = GroupCustomerInfo
       AnchorSideRight.Side = asrBottom
-      Left = 378
-      Height = 23
+      Left = 382
+      Height = 25
       Top = 2
-      Width = 72
+      Width = 70
       DataField = 'yob'
       DataSource = ReportDS
       Anchors = [akTop, akLeft, akRight]
@@ -108,9 +108,9 @@ object ReportBuilderForm: TReportBuilderForm
       AnchorSideBottom.Control = GroupCustomerInfo
       AnchorSideBottom.Side = asrBottom
       Left = 5
-      Height = 61
+      Height = 63
       Top = 52
-      Width = 445
+      Width = 447
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderSpacing.Around = 5
       DataField = 'address'
@@ -127,8 +127,8 @@ object ReportBuilderForm: TReportBuilderForm
     Width = 675
     BorderSpacing.Around = 5
     Caption = 'Diagnoses'
-    ClientHeight = 313
-    ClientWidth = 671
+    ClientHeight = 315
+    ClientWidth = 673
     TabOrder = 1
     object DBGrid1: TDBGrid
       AnchorSideLeft.Control = GroupDiagnoses
@@ -147,12 +147,12 @@ object ReportBuilderForm: TReportBuilderForm
       Columns = <      
         item
           Title.Caption = 'diagnose'
-          Width = 165
+          Width = 174
           FieldName = 'diagnose'
         end      
         item
           Title.Caption = 'extra'
-          Width = 166
+          Width = 174
           FieldName = 'extra'
         end>
       DataSource = RpDetailDS
@@ -167,7 +167,7 @@ object ReportBuilderForm: TReportBuilderForm
       Left = 365
       Height = 15
       Top = 5
-      Width = 60
+      Width = 68
       BorderSpacing.Around = 5
       Caption = 'Description'
       ParentColor = False
@@ -180,7 +180,7 @@ object ReportBuilderForm: TReportBuilderForm
       Left = 365
       Height = 15
       Top = 157
-      Width = 95
+      Width = 105
       BorderSpacing.Around = 5
       Caption = 'Recommendation'
       ParentColor = False
@@ -195,7 +195,7 @@ object ReportBuilderForm: TReportBuilderForm
       Left = 365
       Height = 127
       Top = 25
-      Width = 301
+      Width = 303
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Around = 5
       DataField = 'description'
@@ -212,9 +212,9 @@ object ReportBuilderForm: TReportBuilderForm
       AnchorSideBottom.Control = GroupDiagnoses
       AnchorSideBottom.Side = asrBottom
       Left = 365
-      Height = 131
+      Height = 133
       Top = 177
-      Width = 301
+      Width = 303
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderSpacing.Around = 5
       DataField = 'recommendation'
@@ -230,7 +230,7 @@ object ReportBuilderForm: TReportBuilderForm
       AnchorSideBottom.Control = GroupDiagnoses
       AnchorSideBottom.Side = asrBottom
       Left = 0
-      Height = 30
+      Height = 32
       Top = 278
       Width = 360
       Anchors = [akTop, akLeft, akRight, akBottom]
@@ -243,7 +243,7 @@ object ReportBuilderForm: TReportBuilderForm
       ChildSizing.ShrinkVertical = crsScaleChilds
       ChildSizing.Layout = cclLeftToRightThenTopToBottom
       ChildSizing.ControlsPerLine = 100
-      ClientHeight = 30
+      ClientHeight = 32
       ClientWidth = 360
       DataSource = RpDetailDS
       Options = []
@@ -286,8 +286,8 @@ object ReportBuilderForm: TReportBuilderForm
     BorderSpacing.Right = 5
     BorderSpacing.Bottom = 5
     Caption = 'Report recommendations'
-    ClientHeight = 118
-    ClientWidth = 382
+    ClientHeight = 120
+    ClientWidth = 384
     TabOrder = 3
     object MemoReportRecommend: TDBMemo
       AnchorSideLeft.Control = GroupRecommendation
@@ -297,9 +297,9 @@ object ReportBuilderForm: TReportBuilderForm
       AnchorSideBottom.Control = GroupRecommendation
       AnchorSideBottom.Side = asrBottom
       Left = 0
-      Height = 118
+      Height = 120
       Top = 0
-      Width = 382
+      Width = 384
       Anchors = [akTop, akLeft, akRight, akBottom]
       DataField = 'recommendation'
       DataSource = ReportDS
@@ -349,7 +349,6 @@ object ReportBuilderForm: TReportBuilderForm
   end
   object frDBDataSet1: TfrDBDataSet
     DataSet = RpDetailSQLite
-    DataSource = RpDetailDS
     left = 720
     top = 225
   end
@@ -364,44 +363,6 @@ object ReportBuilderForm: TReportBuilderForm
     TableName = 'report_detail'
     MasterSource = ReportDS
     MasterFields = 'report_id'
-    Active = True
-    FieldDefs = <    
-      item
-        Name = 'id'
-        DataType = ftAutoInc
-        Precision = -1
-        Size = 0
-      end    
-      item
-        Name = 'report_id'
-        DataType = ftString
-        Precision = -1
-        Size = 255
-      end    
-      item
-        Name = 'diagnose'
-        DataType = ftString
-        Precision = -1
-        Size = 255
-      end    
-      item
-        Name = 'extra'
-        DataType = ftString
-        Precision = -1
-        Size = 255
-      end    
-      item
-        Name = 'description'
-        DataType = ftMemo
-        Precision = -1
-        Size = 0
-      end    
-      item
-        Name = 'recommendation'
-        DataType = ftMemo
-        Precision = -1
-        Size = 0
-      end>
     left = 768
     top = 160
   end
@@ -460,5 +421,13 @@ object ReportBuilderForm: TReportBuilderForm
   object PrintDialog1: TPrintDialog
     left = 705
     top = 123
+  end
+  object Sqlite3Query: TSqlite3Dataset
+    FileName = 'parasites.db'
+    Options = [soWildcardKey]
+    PrimaryKey = 'id'
+    TableName = 'parasites'
+    left = 704
+    top = 80
   end
 end

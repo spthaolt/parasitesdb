@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Sqlite3DS, FileUtil, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, Buttons, ExtCtrls, Database, ReportBuilder;
+  StdCtrls, Buttons, ExtCtrls, Database;
 
 type
 
@@ -33,6 +33,8 @@ var
   MainForm: TMainForm;
 
 implementation
+
+uses ReportBuilder;
 
 {$R *.lfm}
 
@@ -61,4 +63,4 @@ begin
 end;
 
 end.
-
+

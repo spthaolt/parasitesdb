@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 411
+  Left = 410
   Height = 463
-  Top = 128
+  Top = 104
   Width = 605
   BorderStyle = bsDialog
   Caption = 'Parasites Database'
@@ -126,4 +126,4 @@ object MainForm: TMainForm
     left = 80
     top = 200
   end
-end
+end

@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="7">
+    <Units Count="10">
       <Unit0>
         <Filename Value="parasitesdb.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -12,7 +12,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="26" Y="10"/>
-        <UsageCount Value="45"/>
+        <UsageCount Value="49"/>
       </Unit0>
       <Unit1>
         <Filename Value="main.pas"/>
@@ -24,8 +24,8 @@
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="31"/>
-        <CursorPos X="33" Y="44"/>
-        <UsageCount Value="45"/>
+        <CursorPos X="20" Y="37"/>
+        <UsageCount Value="49"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -40,7 +40,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="35"/>
         <CursorPos X="66" Y="35"/>
-        <UsageCount Value="45"/>
+        <UsageCount Value="49"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
@@ -54,9 +54,9 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="110"/>
-        <CursorPos X="5" Y="136"/>
-        <UsageCount Value="44"/>
+        <TopLine Value="158"/>
+        <CursorPos X="31" Y="177"/>
+        <UsageCount Value="48"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit3>
@@ -78,13 +78,34 @@
       <Unit6>
         <Filename Value="F:\Apps\lazarus\components\sqlitedataset\customsqliteds.pas"/>
         <UnitName Value="CustomSqliteDS"/>
-        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="748"/>
         <CursorPos X="71" Y="772"/>
         <UsageCount Value="12"/>
-        <Loaded Value="True"/>
       </Unit6>
+      <Unit7>
+        <Filename Value="..\..\..\..\..\usr\share\fpcsrc\2.6.4\rtl\objpas\classes\classesh.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="661"/>
+        <CursorPos X="54" Y="681"/>
+        <UsageCount Value="10"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="..\..\..\..\..\usr\share\fpcsrc\2.6.4\packages\fcl-db\src\sqlite\customsqliteds.pas"/>
+        <UnitName Value="CustomSqliteDS"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="204"/>
+        <CursorPos X="1" Y="217"/>
+        <UsageCount Value="10"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="..\..\..\..\..\usr\share\fpcsrc\2.6.4\packages\fcl-db\src\base\db.pas"/>
+        <UnitName Value="db"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1599"/>
+        <CursorPos X="14" Y="1610"/>
+        <UsageCount Value="10"/>
+      </Unit9>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
@@ -92,125 +113,147 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="37" Column="85" TopLine="37"/>
+        <Caret Line="153" Column="59" TopLine="134"/>
       </Position1>
       <Position2>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="67" Column="16" TopLine="45"/>
+        <Caret Line="149" Column="33" TopLine="134"/>
       </Position2>
       <Position3>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="68" Column="31" TopLine="44"/>
+        <Caret Line="151" Column="1" TopLine="134"/>
       </Position3>
       <Position4>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="67" Column="27" TopLine="44"/>
+        <Caret Line="152" Column="1" TopLine="134"/>
       </Position4>
       <Position5>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="66" Column="27" TopLine="43"/>
+        <Caret Line="153" Column="1" TopLine="134"/>
       </Position5>
       <Position6>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="69" Column="45" TopLine="42"/>
+        <Caret Line="157" Column="11" TopLine="141"/>
       </Position6>
       <Position7>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="77" Column="1" TopLine="54"/>
+        <Caret Line="163" Column="64" TopLine="142"/>
       </Position7>
       <Position8>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="76" Column="36" TopLine="53"/>
+        <Caret Line="162" Column="34" TopLine="144"/>
       </Position8>
       <Position9>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="77" Column="23" TopLine="54"/>
+        <Caret Line="137" Column="26" TopLine="111"/>
       </Position9>
       <Position10>
-        <Filename Value="database.pas"/>
-        <Caret Line="35" Column="66" TopLine="35"/>
+        <Filename Value="reportbuilder.pas"/>
+        <Caret Line="165" Column="37" TopLine="146"/>
       </Position10>
       <Position11>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="76" Column="54" TopLine="55"/>
+        <Caret Line="130" Column="59" TopLine="117"/>
       </Position11>
       <Position12>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="78" Column="54" TopLine="57"/>
+        <Caret Line="131" Column="59" TopLine="118"/>
       </Position12>
       <Position13>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="77" Column="54" TopLine="56"/>
+        <Caret Line="132" Column="59" TopLine="119"/>
       </Position13>
       <Position14>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="81" Column="73" TopLine="57"/>
+        <Caret Line="131" Column="59" TopLine="118"/>
       </Position14>
       <Position15>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="87" Column="21" TopLine="63"/>
+        <Caret Line="172" Column="1" TopLine="150"/>
       </Position15>
       <Position16>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="86" Column="21" TopLine="62"/>
+        <Caret Line="169" Column="22" TopLine="150"/>
       </Position16>
       <Position17>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="87" Column="21" TopLine="63"/>
+        <Caret Line="174" Column="1" TopLine="153"/>
       </Position17>
       <Position18>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="86" Column="21" TopLine="63"/>
+        <Caret Line="163" Column="49" TopLine="153"/>
       </Position18>
       <Position19>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="85" Column="63" TopLine="45"/>
+        <Caret Line="175" Column="1" TopLine="153"/>
       </Position19>
       <Position20>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="86" Column="63" TopLine="58"/>
+        <Caret Line="163" Column="1" TopLine="153"/>
       </Position20>
       <Position21>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="93" Column="63" TopLine="65"/>
+        <Caret Line="170" Column="1" TopLine="153"/>
       </Position21>
       <Position22>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="111" Column="7" TopLine="84"/>
+        <Caret Line="175" Column="1" TopLine="154"/>
       </Position22>
       <Position23>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="75" Column="26" TopLine="69"/>
+        <Caret Line="157" Column="37" TopLine="154"/>
       </Position23>
       <Position24>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="81" Column="6" TopLine="67"/>
+        <Caret Line="171" Column="42" TopLine="154"/>
       </Position24>
       <Position25>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="135" Column="1" TopLine="107"/>
+        <Caret Line="170" Column="1" TopLine="154"/>
       </Position25>
       <Position26>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="75" Column="29" TopLine="67"/>
+        <Caret Line="175" Column="1" TopLine="154"/>
       </Position26>
       <Position27>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="89" Column="32" TopLine="70"/>
+        <Caret Line="157" Column="37" TopLine="148"/>
       </Position27>
       <Position28>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="10" Column="28" TopLine="1"/>
+        <Caret Line="169" Column="1" TopLine="148"/>
       </Position28>
       <Position29>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="84" Column="16" TopLine="56"/>
+        <Caret Line="170" Column="1" TopLine="149"/>
       </Position29>
       <Position30>
         <Filename Value="reportbuilder.pas"/>
-        <Caret Line="10" Column="29" TopLine="1"/>
+        <Caret Line="157" Column="32" TopLine="149"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="reportbuilder.pas"/>
+        <Line Value="171"/>
+      </Item1>
+    </BreakPoints>
+    <Watches Count="3">
+      <Item1>
+        <Expression Value="line"/>
+      </Item1>
+      <Item2>
+        <Expression Value="parts"/>
+      </Item2>
+      <Item3>
+        <Expression Value="ReportBuilderForm.Sqlite3Query.SQL"/>
+      </Item3>
+    </Watches>
+  </Debugging>
   <EditorMacros Count="0"/>
 </CONFIG>
